@@ -1,0 +1,51 @@
+<head>
+    <!-- MetaData -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if (theme.header.additionalMetadata.use){ %>
+    <meta name="keywords" content="<%= theme.header.additionalMetadata.keywords %>" />
+    <meta name="author" content="<%= theme.header.additionalMetadata.author %>" />
+    <meta name="description" content="<%= theme.header.additionalMetadata.description %>" />
+    <% } %>
+    <!-- MetaData End -->
+    <% if (theme.header.additionalManifest.use){ %>
+        <link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous">
+    <% } %>
+
+    <!-- Title -->
+    <title><%= theme.header.title %></title>
+    <!-- Title End -->
+
+    <% if (theme.header.favicon.use){ %>
+        <!-- Favicon -->
+        <link rel="icon" href="<%- theme.header.favicon.icon %>">
+        <link rel="shortcut icon" href="<%- theme.header.favicon.shortcutIcon %>" />
+        <link rel="apple-touch-icon" sizes="72x72" href="<%- theme.header.favicon.appleTouchIcon72 %>" />
+        <link rel="apple-touch-icon" sizes="114x114"  href="<%- theme.header.favicon.appleTouchIcon114 %>" />
+        <link rel="apple-touch-icon" sizes="144x144"  href="<%- theme.header.favicon.appleTouchIcon144 %>" />
+        <!-- Favicon End  -->
+    <% } %>
+
+    <!-- Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+    <!-- Font End -->
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+            fontFamily: {
+                'sans': ['Pretendard Variable', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"],
+            }
+            }
+        }
+        }
+    </script>
+    <!-- TailwindCSS End -->
+
+    <!-- highlight.js Theme -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/<%- theme.header.highlightJs.styleName %>.min.css">
+    <!-- highlight.js Theme End -->
+</head>

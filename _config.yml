@@ -1,0 +1,140 @@
+# Setting up header
+# additionalManifest
+# - use /source/manifest.webmanifest
+# highlightJs
+# - style List -> https://github.com/highlightjs/highlight.js/tree/main/src/styles
+header:
+  title: 'Argon.Blog'
+  additionalManifest:
+    use: true
+  additionalMetadata:
+    use: true
+    keywords: 'develop'
+    author: 'argon1025'
+    description: 'developer Blog'
+  favicon:
+    use: true
+    icon: '/shape.svg'
+    shortcutIcon: '/shape.svg'
+    appleTouchIcon72: '/shape.svg'
+    appleTouchIcon114: '/shape.svg'
+    appleTouchIcon144: '/shape.svg'
+  highlightJs:
+    styleName: 'atom-one-dark'
+
+# Footer Settings
+footer:
+  content1: 'Created By Argon1025 (argon1025@gmail.com)'
+  content2: 'Special thanks | Feed Thumbnail By Milad Fakurian'
+
+# Navigation Settings
+navigation:
+  logo:
+    useImage: true
+    titleText: 'Argon.Blog'
+    titleImage: '/images/wind.png'
+  menu:
+    - name: 'Index'
+      use: true
+      path: '/'
+      hoverColor: 'gray'
+    - name: 'GitHub'
+      use: true
+      path: 'https://github.com/argon1025'
+      hoverColor: 'gray'
+
+# Post List,Detail Settings
+# categoryIcon supported only simpleIcons
+post:
+  categoryIcon:
+    Gmail:
+      iconType: simpleIcons
+      iconName: 'siGmail'
+    Redis:
+      iconType: simpleIcon
+      iconName: siRedis
+    AWS:
+      iconType: simpleIcon
+      iconName: siAmazonaws
+    NodeJS:
+      iconType: simpleIcon
+      iconName: siNodedotjs
+    NestJS:
+      iconType: simpleIcon
+      iconName: siNestjs
+    Git:
+      iconType: simpleIcon
+      iconName: siGit
+    Book:
+      iconType: simpleIcon
+      iconName: siGitbook
+    CircleCI:
+      iconType: simpleIcon
+      iconName: siCircleci
+    Docker:
+      iconType: simpleIcon
+      iconName: siDocker
+    MySQL:
+      iconType: simpleIcon
+      iconName: siMysql
+    NGINX:
+      iconType: simpleIcon
+      iconName: siNginx
+    Prisma:
+      iconType: simpleIcon
+      iconName: siPrisma
+    default:
+      iconType: simpleIcon
+      iconName: siAcademia
+  thumbnail:
+    - source: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/9qLYZ_y25pg'
+      createBy: 'ilgmyzin'
+      path: '/feed-thumbnail/object1.jpg'
+    - source: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/3iFOosUelfk'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object2.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object3.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object4.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object5.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object6.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object7.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object8.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object9.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object10.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object11.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object12.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object13.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object14.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object15.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object16.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object17.jpg'

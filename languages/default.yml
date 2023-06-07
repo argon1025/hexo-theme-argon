@@ -1,0 +1,9 @@
+index:
+  recentPosts: 'Recent Posts'
+  nextPosts: 'Page'
+  defaultSubTitle: 'other'
+  nextPage: 'Next'
+  previousPage: 'Previous'
+
+post:
+  timeFormat: 'YYYY-MM-DD'

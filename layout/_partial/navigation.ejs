@@ -1,0 +1,31 @@
+<div class="z-50 flex justify-center items-center w-full p-5 backdrop-blur-sm bg-white/60">
+    <div class="flex flex-col w-full max-w-5xl justify-center items-center space-y-4 md:space-y-0 md:flex-row">
+        <!-- Logo -->
+        <% if(theme.navigation.logo){ %>
+            <% if(!theme.navigation.logo.useImage){ %>
+                <a href="/">
+                    <h1 class="text-xl font-semibold"><%- theme.navigation.logo.titleText %></h1>
+                </a>
+            <% }else{%>
+                <a href="/">
+                    <img src="<%- theme.navigation.logo.titleImage %>" alt="<%- theme.navigation.logo.titleText %>" class="h-8">
+                </a>
+            <% } %>
+        <% }%>
+        <!-- Logo End -->
+        
+        <!-- Space -->
+        <div class="flex grow"></div>
+        <!-- Space End -->
+
+        <!-- Menu -->
+        <ul class="flex flex-row space-x-10">
+        <% for(let item of theme.navigation.menu) { if (item.use) { %>
+            <li class="font-semibold hover:text-<%= item.hoverColor %>-400 transition duration-300 ease-in-out" data-path="<%- item.path %>">
+                <a href="<%- item.path %>"><%- item.name %></a>
+            </li>
+        <% } } %>
+        </ul>
+        <!-- Menu End -->
+    </div>
+</div>

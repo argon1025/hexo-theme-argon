@@ -1,0 +1,83 @@
+<html>
+    <!-- Header -->
+    <%- partial('_partial/header') %>
+    <!-- Header End -->
+    <body class="w-full h-full font-sans">
+        <!-- Navigation -->
+        <div>
+            <%- partial('_partial/navigation') %>
+        </div>
+        <!-- Navigation End -->
+        <!-- Main -->
+        <div class="flex flex-col w-full justify-center items-center px-5 py-4 space-y-4">
+            <!-- Post List Title -->
+            <div class="flex w-full max-w-5xl">
+                <p class="text-gray-400 text-xl font-semibold mx-1"><%- page.current === 1 ? __('index.recentPosts'): __('index.nextPosts') + ` ${page.current}` %></p>
+            </div>
+            <!-- Post Title End -->
+            <!-- First Post -->
+            <% if(page.current === 1){ %>
+                <%
+                const firstPost = page.posts.data[0];
+                const title = firstPost.title;
+                const subTitle = firstPost.subTitle || __('index.defaultSubTitle');
+                const category = firstPost.categories.data[0]?.name ||  __('index.defaultSubTitle');
+                const techIcon = firstPost.tech ||  __('index.defaultSubTitle');
+                const tags = firstPost.tags.data.map(({name, path})=>name);
+                const date = firstPost.date.format(__("post.timeFormat"));
+                const postPath = url_for(firstPost.path);
+                %>
+                <%- mainFeed(title, subTitle, category, techIcon, date, tags, postPath) %>
+            <%}%>
+            <!-- First Post End -->
+        </div>
+        <!-- Main End -->
+        <!-- Recent Post -->
+        <div class="flex w-full justify-center p-5">
+            <div class="w-full max-w-5xl">
+                <div class="grid grid-cols-1 gap-10 items-start md:grid-cols-2">
+                    <% page.posts.forEach((post, index) => { %>
+                        <%
+                            const title = post.title;
+                            const subTitle = post.subTitle || __('index.defaultSubTitle');
+                            const category = post.categories.data[0]?.name ||  __('index.defaultSubTitle');
+                            const techIcon = post.tech ||  __('index.defaultSubTitle');
+                            const tags = post.tags.data.map(({name, path})=>name);
+                            const date = post.date.format(__("post.timeFormat"));
+                            const firstPageAndFirstPost = page.current === 1 && index === 0;
+                            const postPath = url_for(post.path);
+                        %>
+                        <%- firstPageAndFirstPost ? '' : feed(title, subTitle, category, techIcon, date, tags, postPath) %>
+                    <%})%>
+                    <%- page.current === 1 ? nextButtonFeed(url_for(page.next_link)) : '' %>
+                </div>
+            </div>
+        </div>
+        <!-- Recent Post End -->
+        <!-- pageButton -->
+        <div class="flex flex-row justify-center space-x-5 p-5">
+            <a href="<%- url_for(page.prev_link)%>">
+                <div class="flex flex-row bg-gray-100 rounded-md justify-center items-center py-2 px-3 space-x-2 <%- page.current === 1 ? 'hidden':'' %>">
+                    <div class="w-3 h-3 fill-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                        </svg>                      
+                    </div>
+                    <span class="text-gray-400 text-sm"><%- __('index.previousPage')%></span>
+                </div>
+            </a>
+            <a href="<%- url_for(page.next_link)%>">
+                <div class="flex flex-row bg-gray-100 rounded-md justify-center items-center py-2 px-3 space-x-2 <%- page.current === 1 || page.current === page.total ? 'hidden':'' %>">
+                    <span class="text-gray-400 text-sm"><%- __('index.nextPage')%></span>
+                    <div class="w-3 h-3 fill-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- pageButton End -->
+        <%- partial('_partial/footer') %>
+    </body>
+</html>

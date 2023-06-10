@@ -20,4 +20,7 @@ Simple and modern theme using HEXO and Tailwind CSS
 
 # TODO
 - SEO
+- Search Feature
 - Utterances Support
+- Category Page
+- Tag Page

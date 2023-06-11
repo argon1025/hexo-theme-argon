@@ -1,17 +1,13 @@
 # Setting up header
-# additionalManifest
-# - use /source/manifest.webmanifest
-# highlightJs
-# - style List -> https://github.com/highlightjs/highlight.js/tree/main/src/styles
 header:
   title: 'Argon.Blog'
-  additionalManifest:
-    use: true
-  additionalMetadata:
-    use: true
-    keywords: 'develop'
+  metaData:
+    canonicalUrl: 'https://argon1025.github.io'
+    keywords: 'developer Blog'
     author: 'argon1025'
-    description: 'developer Blog'
+    description: 'page description'
+  additionalManifest: # - use /source/manifest.webmanifest
+    use: false
   favicon:
     use: true
     icon: '/shape.svg'
@@ -19,8 +15,12 @@ header:
     appleTouchIcon72: '/shape.svg'
     appleTouchIcon114: '/shape.svg'
     appleTouchIcon144: '/shape.svg'
-  highlightJs:
-    styleName: 'atom-one-dark'
+
+# Code highlight Skin
+# highlightJs
+# - style List -> https://github.com/highlightjs/highlight.js/tree/main/src/styles
+highlightJs:
+  styleName: 'atom-one-dark'
 
 # Footer Settings
 footer:

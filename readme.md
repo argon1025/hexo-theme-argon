@@ -19,8 +19,8 @@ Simple and modern theme using HEXO and Tailwind CSS
 # Getting Started
 
 # TODO
-- SEO
-- Search Feature
-- Utterances Support
-- Category Page
-- Tag Page
+- [X] SEO
+- [ ] Search Feature
+- [ ] Utterances Support
+- [ ] Category Page
+- [ ] Tag Page

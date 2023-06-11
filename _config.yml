@@ -1,17 +1,13 @@
 # Setting up header
-# additionalManifest
-# - use /source/manifest.webmanifest
-# highlightJs
-# - style List -> https://github.com/highlightjs/highlight.js/tree/main/src/styles
 header:
   title: 'Argon.Blog'
-  additionalManifest:
-    use: true
-  additionalMetadata:
-    use: true
-    keywords: 'develop'
+  metaData:
+    canonicalUrl: 'https://argon1025.github.io'
+    keywords: 'developer Blog'
     author: 'argon1025'
-    description: 'developer Blog'
+    description: 'page description'
+  additionalManifest: # - use /source/manifest.webmanifest
+    use: false
   favicon:
     use: true
     icon: '/shape.svg'
@@ -19,8 +15,12 @@ header:
     appleTouchIcon72: '/shape.svg'
     appleTouchIcon114: '/shape.svg'
     appleTouchIcon144: '/shape.svg'
-  highlightJs:
-    styleName: 'atom-one-dark'
+
+# Code highlight Skin
+# highlightJs
+# - style List -> https://github.com/highlightjs/highlight.js/tree/main/src/styles
+highlightJs:
+  styleName: 'atom-one-dark'
 
 # Footer Settings
 footer:
@@ -138,3 +138,51 @@ post:
     - source: 'https://unsplash.com/ko/@fakurian'
       createBy: 'Milad Fakurian'
       path: '/feed-thumbnail/object17.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object18.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object19.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object20.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object21.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object22.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object23.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object24.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object25.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object26.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object27.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object28.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object29.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object30.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object31.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object32.jpg'
+    - source: 'https://unsplash.com/ko/@fakurian'
+      createBy: 'Milad Fakurian'
+      path: '/feed-thumbnail/object33.jpg'

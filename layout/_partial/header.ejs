@@ -1,20 +1,34 @@
 <head>
+    <!-- Title -->
+    <% const isPage = !!page.title; %>
+    <title><%= theme.header.title %><%= isPage ? ` -  ${page.title}`:'' %></title>
+    <!-- Title End -->
+
     <!-- MetaData -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <% if (theme.header.additionalMetadata.use){ %>
-    <meta name="keywords" content="<%= theme.header.additionalMetadata.keywords %>" />
-    <meta name="author" content="<%= theme.header.additionalMetadata.author %>" />
-    <meta name="description" content="<%= theme.header.additionalMetadata.description %>" />
-    <% } %>
+
+    <link rel="canonical" href="<%- theme.header.metaData.canonicalUrl + '/' + page.path %>">
+    <meta name="keywords" content="<%- theme.header.metaData.keywords %>" />
+    <meta name="author" content="<%- theme.header.metaData.author %>" />
+    <meta name="description" content="<%- theme.header.metaData.description %>" />
     <!-- MetaData End -->
+
+    <!-- Open Graph -->
+    <% const ogTitle = page.title || theme.header.title; %>
+    <% const ogDescription = page.subTitle || theme.header.metaData.description; %>
+    <% const randomThumbnailData = theme.post.thumbnail.sort(() => Math.random() - 0.5)[0]; %>
+    <% const thumbnailPath = randomThumbnailData.path; %>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%= ogTitle %>">
+    <meta property="og:description" content="<%= ogDescription %>">
+    <meta property="og:image" content="<%= thumbnailPath %>">
+    <meta property="og:url" content="<%= config.url %>">
+    <!-- Open Graph End -->
+
     <% if (theme.header.additionalManifest.use){ %>
         <link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous">
     <% } %>
-
-    <!-- Title -->
-    <title><%= theme.header.title %></title>
-    <!-- Title End -->
 
     <% if (theme.header.favicon.use){ %>
         <!-- Favicon -->
@@ -46,6 +60,6 @@
     <!-- TailwindCSS End -->
 
     <!-- highlight.js Theme -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/<%- theme.header.highlightJs.styleName %>.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/<%- theme.highlightJs.styleName %>.min.css">
     <!-- highlight.js Theme End -->
 </head>

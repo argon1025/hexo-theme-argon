@@ -1,53 +1,53 @@
 <div class="flex flex-col w-full justify-center items-center space-y-5 p-5">
-    <!-- Post Detail Header -->
-    <div class="w-full max-w-5xl space-y-3">
-      <% const subTitle=page.subTitle; %>
-      <% const title=page.title; %>
-      <% const techIcon = page.tech ||  __('index.defaultSubTitle'); %>
-      <% const category = page.categories?.data[0]?.name || '-'%>
-      <% const iconConfigData = theme.post.categoryIcon[techIcon] || theme.post.categoryIcon.default %>
-      <% const iconData = simpleIcons(iconConfigData.iconName,'w-full','h-full') %>
-      <% const tagList = page.tags?.data ? page.tags.data : [] %>
-      <!-- Header Category -->
-      <div class="flex text-xs">
-        <div class="flex flex-row rounded-md justify-center items-center space-x-1">
-          <div class="w-3 h-3 fill-gray-400"><%- iconData.svg %></div>
-              <span class="text-gray-400"><%= category %></span>
-        </div>
-      </div>
-      <!-- Header Category End -->
-      <div class="w-full flex flex-col justify-start">
-        <h1 class="text-2xl md:text-4xl font-semibold mb-2"><%= title %></h1>
-        <h2 class="text-sm md:text-xl text-gray-800"><%- subTitle %></h2>
-      </div>
-      <!-- Header Tags And CreatedAt -->
-      <div class="flex flex-row text-xs items-center">
-        <div>
-          <% for(let tag of tagList) { %>
-            <span class="text-[#53C1F8]">#<%= tag.name %> </span>
-            <% } %>
-        </div>
-        <div class="text-gray-400 ml-auto"><%= page.date.format(__("post.timeFormat")) %></div>
-      </div>
-      <!-- Header Tags And CreatedAt End -->
-    </div>
-    <!-- Post Detail Header End -->
-    <!-- Thumbnail -->
-    <div class="w-full max-w-5xl">
-      <% const randomThumbnailData = theme.post.thumbnail.sort(() => Math.random() - 0.5)[0]; %>
-      <% const thumbnailPath = randomThumbnailData.path; %>
-      <div class="flex flex-col justify-center items-center rounded-3xl overflow-hidden h-80 w-full hover:drop-shadow-xl transition duration-300 ease-in-out">
-        <img src=<%- thumbnailPath %> alt="Thumbnail" class="w-full h-full object-cover" loading="lazy"></img>
+  <!-- Post Detail Header -->
+  <div class="w-full max-w-5xl space-y-3">
+    <% const subTitle=page.subTitle; %>
+    <% const title=page.title; %>
+    <% const techIcon = page.tech ||  __('index.defaultSubTitle'); %>
+    <% const category = page.categories?.data[0]?.name || '-'%>
+    <% const iconConfigData = theme.post.categoryIcon[techIcon] || theme.post.categoryIcon.default %>
+    <% const iconData = simpleIcons(iconConfigData.iconName,'w-full','h-full') %>
+    <% const tagList = page.tags?.data ? page.tags.data : [] %>
+    <% const randomThumbnailData = theme.post.thumbnail.sort(() => Math.random() - 0.5)[0]; %>
+    <% const thumbnailPath = randomThumbnailData.path; %>
+    <!-- Header Category -->
+    <div class="flex text-xs">
+      <div class="flex flex-row rounded-md justify-center items-center space-x-1">
+        <div class="w-3 h-3 fill-gray-400"><%- iconData.svg %></div>
+            <span class="text-gray-400"><%= category %></span>
       </div>
     </div>
-    <!-- Thumbnail End -->
-    <!-- Content -->
-    <div class="flex flex-row w-full max-w-5xl justify-center space-x-2">
-      <!-- Post Content -->
-        <article class="w-full max-w-3xl prose prose-sm md:prose-base overflow-hidden text-gray-700 prose-hr:my-3 prose-pre:bg-gray-900 prose-h1:text-2xl md:prose-h1:text-3xl prose-h1:font-medium prose-h1:mt-8 prose-h1:mb-1 prose-h2:text-xl md:prose-h2:text-2xl prose-h2:font-medium prose-h2:mt-8 prose-h2:mb-1 prose-h3:text-base md:prose-h2:text-xl prose-h3:font-medium prose-h3:mt-8 prose-h3:mb-1">
-          <%- page.content %>
-        </article>
-        <!-- Post Content End -->
+    <!-- Header Category End -->
+    <div class="w-full flex flex-col justify-start">
+      <h1 class="text-2xl md:text-4xl font-semibold mb-2"><%= title %></h1>
+      <h2 class="text-sm md:text-xl text-gray-800"><%- subTitle %></h2>
     </div>
-    <!-- Content End -->
+    <!-- Header Tags And CreatedAt -->
+    <div class="flex flex-row text-xs items-center">
+      <div class="flex flex-row space-x-1">
+        <% for(let tag of tagList) { %>
+          <p class="text-[#53C1F8]">#<%= tag.name %></p>
+          <% } %>
+      </div>
+      <div class="text-gray-400 ml-auto"><%= page.date.format(__("post.timeFormat")) %></div>
+    </div>
+    <!-- Header Tags And CreatedAt End -->
+  </div>
+  <!-- Post Detail Header End -->
+  <!-- Thumbnail -->
+  <div class="w-full max-w-5xl">
+    <div class="flex flex-col justify-center items-center rounded-3xl overflow-hidden h-80 w-full hover:drop-shadow-xl transition duration-300 ease-in-out">
+      <img src=<%- thumbnailPath %> alt="Thumbnail" class="w-full h-full object-cover" loading="lazy"></img>
+    </div>
+  </div>
+  <!-- Thumbnail End -->
+  <!-- Content -->
+  <div class="flex flex-row w-full max-w-5xl justify-center space-x-2">
+    <!-- Post Content -->
+      <article class="w-full max-w-3xl prose prose-sm md:prose-base overflow-hidden text-gray-700 prose-hr:my-3 prose-pre:bg-gray-900 prose-h1:text-2xl md:prose-h1:text-3xl prose-h1:font-medium prose-h1:mt-8 prose-h1:mb-1 prose-h2:text-xl md:prose-h2:text-2xl prose-h2:font-medium prose-h2:mt-8 prose-h2:mb-1 prose-h3:text-base md:prose-h2:text-xl prose-h3:font-medium prose-h3:mt-8 prose-h3:mb-1">
+        <%- page.content %>
+      </article>
+      <!-- Post Content End -->
+  </div>
+  <!-- Content End -->
 </div>

@@ -1,30 +1,32 @@
 <head>
+    <% const pageTitle = `${theme.header.title}${page.title ? ` - ${page.title}`:''}`;  %>
+    <% const pageDescription = page.subTitle || theme.header.metaData.description; %>
+    <% const randomThumbnailData = theme.post.thumbnail.sort(() => Math.random() - 0.5)[0]; %>
+    <% const thumbnailPath = randomThumbnailData.path; %>
+    <% const nowUrl = config.url + '/' + page.path %>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%- pageTitle %>">
+    <meta property="og:description" content="<%- pageDescription %>">
+    <meta property="og:image" content="<%- thumbnailPath %>">
+    <meta property="og:url" content="<%- nowUrl %>">
+    <meta property="og:site_name" content="<%- pageTitle %>">
+    <!-- Open Graph End -->
+
     <!-- Title -->
-    <% const isPage = !!page.title; %>
-    <title><%= theme.header.title %><%= isPage ? ` -  ${page.title}`:'' %></title>
+    <title><%= pageTitle %></title>
     <!-- Title End -->
 
     <!-- MetaData -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="canonical" href="<%- theme.header.metaData.canonicalUrl + '/' + page.path %>">
+    <meta name="title" content="<%- pageTitle %>">
+    <link rel="canonical" href="<%- nowUrl %>">
     <meta name="keywords" content="<%- theme.header.metaData.keywords %>" />
     <meta name="author" content="<%- theme.header.metaData.author %>" />
-    <meta name="description" content="<%- theme.header.metaData.description %>" />
+    <meta name="description" content="<%- pageDescription %>" />
     <!-- MetaData End -->
-
-    <!-- Open Graph -->
-    <% const ogTitle = page.title || theme.header.title; %>
-    <% const ogDescription = page.subTitle || theme.header.metaData.description; %>
-    <% const randomThumbnailData = theme.post.thumbnail.sort(() => Math.random() - 0.5)[0]; %>
-    <% const thumbnailPath = randomThumbnailData.path; %>
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="<%= ogTitle %>">
-    <meta property="og:description" content="<%= ogDescription %>">
-    <meta property="og:image" content="<%= thumbnailPath %>">
-    <meta property="og:url" content="<%= config.url %>">
-    <!-- Open Graph End -->
 
     <% if (theme.header.additionalManifest.use){ %>
         <link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous">
